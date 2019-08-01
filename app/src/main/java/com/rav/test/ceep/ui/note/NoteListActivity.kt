@@ -45,9 +45,9 @@ class NoteListActivity: BaseActivity<ActivityNoteListBinding, NoteListViewModel>
         viewModel!!.setNavigator(this)
         viewModel!!.init()
 
-        /*val recyclerView = note_list_recyclerview
+        val recyclerView = note_list_recyclerview
         val layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        recyclerView.layoutManager = layoutManager*/
+        recyclerView.layoutManager = layoutManager
     }
 
 

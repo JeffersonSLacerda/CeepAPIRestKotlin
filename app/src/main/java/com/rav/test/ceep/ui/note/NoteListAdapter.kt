@@ -24,7 +24,7 @@ class NoteListAdapter(private val notes: ArrayList<Note>,
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         val note = notes[position]
-        holder?.let{
+        holder.let{
             it.title.text = note.title
             it.description.text = note.description
         }
