@@ -9,7 +9,7 @@ import com.rav.test.ceep.R
 import com.rav.test.ceep.data.model.Note
 import kotlinx.android.synthetic.main.note_item.view.*
 
-class NoteListAdapter(private val notes: List<Note>,
+class NoteListAdapter(private val notes: ArrayList<Note>,
                       private var context: Context): RecyclerView.Adapter<NoteListAdapter. ViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.note_item, parent, false)
