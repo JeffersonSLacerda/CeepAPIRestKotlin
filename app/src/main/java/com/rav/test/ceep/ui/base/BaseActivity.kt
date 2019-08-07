@@ -36,7 +36,7 @@ abstract class BaseActivity <out T: ViewDataBinding, out V: BaseViewModel>: AppC
         return mViewDataBinding
     }
 
-    override fun onFragemnteAttached() { }
+    override fun onFragementAttached() { }
 
     override fun onFragmentDetached(tag: String) { }
 }

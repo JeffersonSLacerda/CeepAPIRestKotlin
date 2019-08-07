@@ -1,17 +1,12 @@
 package com.rav.test.ceep.data.rest.service
 
-import android.content.Context
 import com.rav.test.ceep.data.model.Note
 import com.rav.test.ceep.data.rest.api.NoteApi
 
 @Suppress("SENSELESS_COMPARISON")
-class NoteService(var context: Context): BaseService() {
+class NoteService : BaseService() {
 
-    private var service: NoteApi
-
-    init {
-        service = createService(NoteApi::class.java)
-    }
+    private var service: NoteApi = createService(NoteApi::class.java)
 
     fun listAll(listener: FetchDataListener<ArrayList<Note>>){
 
@@ -29,6 +24,22 @@ class NoteService(var context: Context): BaseService() {
             override fun onFetchDataFail(message: String) {
                 listener.onFetchDataFail(BaseService().NO_DATA_RESULT)
             }
+        })
+    }
+
+    fun insert(note: Note, listener: FetchDataListener<Note>){
+
+        val call = service.inset(note)
+
+        fetchData(call, object : FetchDataListener<Note>{
+            override fun onFetchDataSuccess(dataObject: Note) {
+                listener.onFetchDataSuccess(dataObject)
+            }
+
+            override fun onFetchDataFail(message: String) {
+                listener.onFetchDataFail(message)
+            }
+
         })
     }
 }

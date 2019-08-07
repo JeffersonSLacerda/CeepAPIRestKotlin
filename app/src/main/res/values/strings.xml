@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Ceep</string>
+    <string name="add_note">Add Note</string>
+    <string name="send">Send</string>
+    <string name="close">Close</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="cancel">Cancel</string>
 </resources>

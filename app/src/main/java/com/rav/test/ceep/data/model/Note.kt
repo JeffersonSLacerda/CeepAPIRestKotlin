@@ -1,4 +1,4 @@
 package com.rav.test.ceep.data.model
 
-class Note(val title: String,
-           val description: String)
+class Note(var title: String,
+           var description: String)

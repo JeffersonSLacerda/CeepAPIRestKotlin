@@ -1,5 +1,6 @@
 package com.rav.test.ceep.ui.note
 
+import android.view.View
 import com.rav.test.ceep.data.model.Note
 import com.rav.test.ceep.data.rest.service.BaseService
 import com.rav.test.ceep.data.rest.service.NoteService
@@ -15,9 +16,9 @@ class NoteListViewModel: BaseViewModel() {
         fetchNotes()
     }
 
-    private fun fetchNotes() {
+    fun fetchNotes() {
 
-        val service = NoteService(getContext())
+        val service = NoteService()
 
         service.listAll(object : BaseService.FetchDataListener<ArrayList<Note>>{
             override fun onFetchDataSuccess(dataObject: ArrayList<Note>) {
@@ -29,5 +30,9 @@ class NoteListViewModel: BaseViewModel() {
                 navigator.handlerError(message)
             }
         })
+    }
+
+    fun openDialog(view: View) {
+      navigator.openDialog(view)
     }
 }

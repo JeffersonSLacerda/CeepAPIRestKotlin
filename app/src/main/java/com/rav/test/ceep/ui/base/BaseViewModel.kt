@@ -18,7 +18,7 @@ abstract class BaseViewModel: ViewModel() {
         return mNavigator!!
     }
 
-    fun setNavigator(navigator: BaseNavigator) {
+    infix fun setNavigator(navigator: BaseNavigator) {
         this.mNavigator = navigator
     }
 

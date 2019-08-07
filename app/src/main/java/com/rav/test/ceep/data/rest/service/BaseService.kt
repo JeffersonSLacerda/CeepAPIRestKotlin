@@ -49,7 +49,7 @@ open class BaseService {
             override fun onResponse(call: Call<T>, response: Response<T>) {
 
                 try {
-                    if (response?.code() == 200 && response.body() != null)
+                    if (response.code() == 200 && response.body() != null)
                         listener.onFetchDataSuccess(response.body()!!)
                     else
                         listener.onFetchDataFail(NO_DATA_RESULT)
